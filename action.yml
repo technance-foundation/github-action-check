@@ -11,6 +11,9 @@ inputs:
     check-command:
         description: "The command to run checks (e.g., lint, prettier, test)"
         default: "pnpm run check"
+    npm-token:
+        description: "NPM token for authenticating to the NPM registry"
+        required: true
 
 runs:
     using: "composite"
@@ -45,10 +48,13 @@ runs:
                   ${{ runner.os }}-pnpm-store-
 
         - name: Authenticate NPM registry
-          run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          shell: bash
+          run: echo "//registry.npmjs.org/:_authToken=${{ inputs.npm-token }}" > ~/.npmrc
 
         - name: Install dependencies
+          shell: bash
           run: pnpm install --no-frozen-lockfile
 
         - name: Run checks
+          shell: bash
           run: ${{ inputs.check-command }}
