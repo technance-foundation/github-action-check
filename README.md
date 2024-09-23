@@ -10,11 +10,13 @@ This is a reusable GitHub Action designed to run various checks (like linting, f
 
 ## Inputs
 
-| Input           | Description                                            |
-| --------------- | ------------------------------------------------------ |
-| `node-version`  | The version of Node.js to use                          |
-| `pnpm-version`  | The version of pnpm to use                             |
-| `check-command` | The command to run checks (e.g., lint, test, prettier) |
+| Input                           | Description                                            |
+| ------------------------------- | ------------------------------------------------------ |
+| `node-version`                  | The version of Node.js to use                          |
+| `pnpm-version`                  | The version of pnpm to use                             |
+| `check-command`                 | The command to run checks (e.g., lint, test, prettier) |
+| `npm-token`*<sup>required</sup> | The command to run checks (e.g., lint, test, prettier) |
+| `working-directory`             | The path in which node commands should execute         |
 
 ## Usage
 

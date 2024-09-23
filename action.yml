@@ -15,6 +15,7 @@ inputs:
         description: "NPM token for authenticating to the NPM registry"
         required: true
     working-directory:
+        description: "The path in which node commands should execute"
         default: "."
 
 runs:
