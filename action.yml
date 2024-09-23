@@ -15,6 +15,7 @@ inputs:
         description: "NPM token for authenticating to the NPM registry"
         required: true
     working-directory:
+        default: "."
 
 runs:
     using: "composite"
