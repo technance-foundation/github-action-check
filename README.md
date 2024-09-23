@@ -15,7 +15,7 @@ This is a reusable GitHub Action designed to run various checks (like linting, f
 | `node-version`                  | The version of Node.js to use                          |
 | `pnpm-version`                  | The version of pnpm to use                             |
 | `check-command`                 | The command to run checks (e.g., lint, test, prettier) |
-| `npm-token`*<sup>required</sup> | The command to run checks (e.g., lint, test, prettier) |
+| `npm-token`*<sup>required</sup> | NPM token for authenticating to the NPM registry       |
 | `working-directory`             | The path in which node commands should execute         |
 
 ## Usage
