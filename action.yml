@@ -14,6 +14,9 @@ inputs:
     npm-token:
         description: "NPM token for authenticating to the NPM registry"
         required: true
+    working-directory:
+        description: "The path in which node commands should execute"
+        default: "."
 
 runs:
     using: "composite"
@@ -52,9 +55,11 @@ runs:
           run: echo "//registry.npmjs.org/:_authToken=${{ inputs.npm-token }}" > ~/.npmrc
 
         - name: Install dependencies
+          working-directory: ${{ inputs.working-directory }}
           shell: bash
           run: pnpm install --no-frozen-lockfile
 
         - name: Run checks
+          working-directory: ${{ inputs.working-directory }}
           shell: bash
           run: ${{ inputs.check-command }}
