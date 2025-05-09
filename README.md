@@ -10,13 +10,13 @@ This is a reusable GitHub Action designed to run various checks (like linting, f
 
 ## Inputs
 
-| Input                           | Description                                            |
-| ------------------------------- | ------------------------------------------------------ |
-| `node-version`                  | The version of Node.js to use                          |
-| `pnpm-version`                  | The version of pnpm to use                             |
-| `check-command`                 | The command to run checks (e.g., lint, test, prettier) |
-| `npm-token`<sup>*required</sup> | NPM token for authenticating to the NPM registry       |
-| `working-directory`             | The path in which node commands should execute         |
+| Input               | Description                                                                                                           |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `node-version`      | The version of Node.js to use. Default is `20`                                                                        |
+| `pnpm-version`      | The version of pnpm to use. Default is `9.0.6`                                                                        |
+| `check-command`     | The command to run checks. This could be a lint command, test, etc... or a combined one. Default is `pnpm run check`. |
+| `npm-token`         | NPM token for authenticating to the NPM registry                                                                      |
+| `working-directory` | The path in which node commands should execute. Defaults to project root                                              |
 
 ## Usage
 
@@ -33,18 +33,12 @@ jobs:
     check:
         runs-on: ubuntu-latest
         steps:
-            - uses: invexa-foundation/github-action-check@main
+            - uses: technance-foundation/github-action-check@main
               with:
                   node-version: "20"
                   pnpm-version: "9.0.6"
                   check-command: "pnpm run check"
 ```
-
-### Inputs
-
--   **`node-version`**: Specify the Node.js version to use in your project. Default is `20`.
--   **`pnpm-version`**: Specify the pnpm version to use. Default is `9.0.6`.
--   **`check-command`**: Define the command to run checks. This could be a lint command, test, or formatting command. Default is `pnpm run check`.
 
 ### Example Check Commands
 
