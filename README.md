@@ -1,5 +1,15 @@
 # Check Workflow Action
 
+> [!WARNING]
+>
+> **DEPRECATION NOTICE**
+>
+> This action has moved to **[technance-foundation/github-actions](https://github.com/technance-foundation/github-actions)**:
+>
+> -   Check: `technance-foundation/github-actions/.github/actions/check@main`
+>
+> The current repo will no longer receive updates.
+
 This is a reusable GitHub Action designed to run various checks (like linting, formatting, and testing) in projects using Node.js and pnpm.
 
 ## Features
